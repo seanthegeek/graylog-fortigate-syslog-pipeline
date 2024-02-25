@@ -6,4 +6,4 @@ Converts FortiGate syslog fields to the correct data type and removes unnecessar
 
 ### Dependencies
 
-- [FortiGate syslog content pack](https://github.com/seanthegeek/graylog-fortigate-syslog)
+- [FortiGate syslog content pack](https://github.com/seanthegeek/graylog-fortigate-syslog) provides the required `Graylog Syslog` stream
