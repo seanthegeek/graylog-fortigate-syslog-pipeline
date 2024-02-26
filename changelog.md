@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.2-rev5
+## 1.0.3-rev5
 
 - Remove unused `destip to long` and `destport to long` pipeline rules
 - Include `dstport to long` in `Graylog syslog cleanup` pipeline
