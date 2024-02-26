@@ -1,7 +1,7 @@
 {
   "v": "1",
   "id": "c3c6366b-0e10-41d7-91de-d54d8b9694b0",
-  "rev": 5,
+  "rev": 6,
   "name": "FortiGate Syslog pipeline",
   "summary": "Converts FortiGate Syslog fields to the correct data type and removes unnecessary fields",
   "description": "# graylog-fortigate-syslog-pipeline\n\n## FortiGate syslog data cleanup\n\nConverts FortiGate syslog fields to the correct data type and removes unnecessary fields.\n\n### Dependencies\n\n- [FortiGate syslog content pack](https://github.com/seanthegeek/graylog-fortigate-syslog) provides the required `Graylog Syslog` stream",
@@ -342,34 +342,6 @@
         "source": {
           "@type": "string",
           "@value": "rule \"sessionid to long\"\nwhen\n  has_field(\"sessionid\")\nthen\n  set_field(\"sessionid\", to_long($message.sessionid));\nend"
-        }
-      },
-      "constraints": [
-        {
-          "type": "server-version",
-          "version": ">=5.2.4+ec33db8"
-        }
-      ]
-    },
-    {
-      "v": "1",
-      "type": {
-        "name": "pipeline_rule",
-        "version": "1"
-      },
-      "id": "2546434b-40e7-421c-a5ce-f11aae36bd8b",
-      "data": {
-        "title": {
-          "@type": "string",
-          "@value": "rcvdpktdelta to long"
-        },
-        "description": {
-          "@type": "string",
-          "@value": ""
-        },
-        "source": {
-          "@type": "string",
-          "@value": "rule \"rcvdpktdelta to long\"\nwhen\n  has_field(\"pktdelta\")\nthen\n  set_field(\"rcvdpktdelta\", to_long($message.rcvdpktdelta));\nend"
         }
       },
       "constraints": [
@@ -1322,6 +1294,34 @@
         "source": {
           "@type": "string",
           "@value": "rule \"remove destuuid field\"\nwhen\n  has_field(\n    field : \"dstuuid\"\n  )\nthen\n  remove_field(\n    field : \"dstuuid\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.4+ec33db8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "9720d704-545f-45c6-9e23-73ad97620be5",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "rcvdpktdelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"rcvdpktdelta to long\"\nwhen\n  has_field(\"rcvdpktdelta\")\nthen\n  set_field(\"rcvdpktdelta\", to_long($message.rcvdpktdelta));\nend"
         }
       },
       "constraints": [

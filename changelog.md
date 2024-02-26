@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4-rev6
+
+- Fix `"rcvdpktdelta to long` pipeline rule
+
 ## 1.0.3-rev5
 
 - Remove unused `destip to long` and `destport to long` pipeline rules
