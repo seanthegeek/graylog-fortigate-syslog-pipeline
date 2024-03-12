@@ -15,7 +15,7 @@
         "name": "pipeline",
         "version": "1"
       },
-      "id": "4fd5146a-bf12-45f2-b789-679dd6d54d64",
+      "id": "e0b14686-1bf9-4d42-ac9e-5b3914986705",
       "data": {
         "title": {
           "@type": "string",
@@ -32,14 +32,14 @@
         "connected_streams": [
           {
             "@type": "string",
-            "@value": "6b28b119-0f89-41d3-ad69-51b62ba0c0a1"
+            "@value": "7e58ee66-d3e5-4704-a06e-8a991e09d0a3"
           }
         ]
       },
       "constraints": [
         {
           "type": "server-version",
-          "version": ">=5.2.4+ec33db8"
+          "version": ">=5.2.5+7eaa89d"
         }
       ]
     },
@@ -1328,6 +1328,1314 @@
         {
           "type": "server-version",
           "version": ">=5.2.4+ec33db8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "53e5850c-3783-412c-b00e-b6cc40ce7ab0",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "attackid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"attackid to long\"\nwhen\n  is_string($message.\"attackid\")\nthen\n  set_field(\"attackid\", to_long($message.attackid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "5b86ec3c-4919-439b-915f-efdb495cab8c",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "sessionid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"sessionid to long\"\nwhen\n  has_field(\"sessionid\")\nthen\n  set_field(\"sessionid\", to_long($message.sessionid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "9dd14a08-0a6c-4370-a13a-aa57738d3d93",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "lanin to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"lanin to long\"\nwhen\n  has_field(\"lanin\")\nthen\n  set_field(\"lanin\", to_long($message.linin));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "c48d80f2-67aa-4adf-b50e-61b4e77f3c77",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove destuuid field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove destuuid field\"\nwhen\n  has_field(\n    field : \"dstuuid\"\n  )\nthen\n  remove_field(\n    field : \"dstuuid\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "b059bd3e-98bb-411c-97f2-1095bfc4d7dd",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "rcvdpktdelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"rcvdpktdelta to long\"\nwhen\n  has_field(\"rcvdpktdelta\")\nthen\n  set_field(\"rcvdpktdelta\", to_long($message.rcvdpktdelta));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "45c9b648-4123-48d9-8534-cf9db7695a36",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "xid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"xid to long\"\nwhen\n  has_field(\"xid\")\nthen\n  set_field(\"xid\", to_long($message.xid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "ea0e1542-c9fc-4d07-b580-583812f071e5",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove eventtime field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove eventtime field\"\nwhen\n  has_field(\n    field : \"eventtime\"\n  )\nthen\n  remove_field(\n    field : \"eventtime\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "0ca95470-51c7-4139-b8da-7c8901a151bd",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "lanout to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"lanout to long\"\nwhen\n  has_field(\"lanout\")\nthen\n  set_field(\"lanout\", to_long($message.lanout));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "5cc6d655-bf19-4883-a8e1-41295966563c",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove poluuid field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove poluuid field\"\nwhen\n  has_field(\n    field : \"poluuid\"\n  )\nthen\n  remove_field(\n    field : \"poluuid\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "6f70ac25-c96d-4244-a66c-d884b5a5e707",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "incidentserialno to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"incidentserialno to long\"\nwhen\n  has_field(\"incidentserialno\")\nthen\n  set_field(\"incidentserialno\", to_long($message.incidentserialno));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "6a7d2572-2abb-411e-befa-379a4e4db404",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "srcport to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"srcport to long\"\nwhen\n  has_field(\"srcport\")\nthen\n  set_field(\"srcport\", to_long($message.srcport));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "d6f71052-55cf-4895-a1d5-3d34978d2ffc",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "transport to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"transport to long\"\nwhen\n  has_field(\"transport\")\nthen\n  set_field(\"transport\", to_long($message.transport));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "c7dd433e-21ab-45ca-a05b-f4168ce41fb4",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "level to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"level to long\"\nwhen\n  has_field(\"level\")\nthen\n  set_field(\"level\", to_long($message.level));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "17a8711f-99ad-4c68-a37d-69ea0a7c02fc",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove time field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove time field\"\nwhen\n  has_field(\n    field : \"time\"\n  )\nthen\n  remove_field(\n    field : \"time\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "1bd6c86a-098a-4b82-8cbc-b7a8317abe03",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "dstip to ip"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"dstip to ip\"\nwhen\n  has_field(\"dstip\")\nthen\n  set_field(\"dstip\", to_ip($message.dstip));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "a64aa324-8c2f-4aa1-819b-7da9e7691947",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "sentpktdelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"sentpktdelta to long\"\nwhen\n  has_field(\"sentpktdelta\")\nthen\n  set_field(\"sentpktdelta\", to_long($message.sentpktdelta));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "7b7bd4ee-d0f6-4272-980b-00fdc44f7ad5",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "srcip to ip"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"srcip to ip\"\nwhen\n  is_string($message.\"srcip\")\nthen\n  set_field(\"srcip\", to_ip($message.srcip));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "1afa6c8a-eba5-4737-b8dc-f9cf0c92c3e7",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "eventtime to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"eventtime to long\"\nwhen\n  has_field(\"eventtime\")\nthen\n  set_field(\"eventtime\", to_long($message.eventtime));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "cbfaf05a-48f3-49ab-a659-31468fa8f108",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove date field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove date field\"\nwhen\n  has_field(\n    field : \"date\"\n  )\nthen\n  remove_field(\n    field : \"date\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "8a870e79-3881-4efd-a07b-2330e0bedf17",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "cat to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"cat to long\"\nwhen\n  has_field(\"cat\")\nthen\n  set_field(\"cat\", to_long($message.cat));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "a741cf11-0cfe-42cc-b3c6-6fa746e811c2",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "sentbyte to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"sentbyte to long\"\nwhen\n  has_field(\"sentbyte\")\nthen\n  set_field(\"sentbyte\", to_long($message.sentbyte));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "7637588f-4c9b-49e7-950b-7f4bb1d582a9",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "rcvdbyte to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"rcvdbyte to long\"\nwhen\n  has_field(\"rcvdbyte\")\nthen\n  set_field(\"rcvdbyte\", to_long($message.rcvdbyte));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "644a83ff-e255-4126-8229-e38fbf6627ad",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "craction to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"craction to long\"\nwhen\n  has_field(\"craction\")\nthen\n  set_field(\"craction\", to_long($message.craction));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "16638afd-d02b-4c22-b763-cb9b8eb8ad9b",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "dstport to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"dstport to long\"\nwhen\n  has_field(\"dstport\")\nthen\n  set_field(\"dstport\", to_long($message.dstport));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "bfbc4898-d07a-4a7a-b44a-58f9af403254",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "proto to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"proto to long\"\nwhen\n  has_field(\"proto\")\nthen\n  set_field(\"proto\", to_long($message.proto));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "04c02d87-7304-4b14-b902-73f7e36ac731",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove srcuuid field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove srcuuid field\"\nwhen\n  has_field(\n    field : \"srcuuid\"\n  )\nthen\n  remove_field(\n    field : \"srcuuid\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "9d387c3f-07f5-47f3-b761-e97c4ea9534b",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "crscore to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"crscore to long\"\nwhen\n  has_field(\"crscore\")\nthen\n  set_field(\"crscore\", to_long($message.crscore));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "f8e1d206-6392-4e31-a05a-83dafa8fd710",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove facility_num field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove facility_num field\"\nwhen\n  has_field(\n    field : \"facility_num\"\n  )\nthen\n  remove_field(\n    field : \"facility_num\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "7861fe58-ca89-4e02-a6f1-53d32cecbf8d",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove tz field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove tz field\"\nwhen\n  has_field(\n    field : \"tz\"\n  )\nthen\n  remove_field(\n    field : \"tz\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "958a7601-156f-4641-9ee7-5e7349cf373c",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "appid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"appid to long\"\nwhen\n  has_field(\"appid\")\nthen\n  set_field(\"appid\", to_long($message.appid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "0aed45c9-32ba-47ff-b171-869db457d952",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "sentpkt to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"sentpkt to long\"\nwhen\n  has_field(\"sentpkt\")\nthen\n  set_field(\"sentpkt\", to_long($message.sentpkt));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "75c1e2bc-4792-45ef-be6b-ce8defc39dbe",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "rcvddelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"rcvddelta to long\"\nwhen\n  has_field(\"rcvddelta\")\nthen\n  set_field(\"rcvddelta\", to_long($message.rcvddelta));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "62ebc92d-4ce9-4811-97be-ec9da8826e27",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "wanout to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"wanout to long\"\nwhen\n  has_field(\"wanout\")\nthen\n  set_field(\"wanout\", to_long($message.wanout));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "266cb7e8-7cc0-48a2-82b3-fc3801762436",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "transip to ip"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"transip to ip\"\nwhen\n  is_string($message.\"transip\")\nthen\n  set_field(\"transip\", to_ip($message.transip));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "86824895-4777-4944-a3fe-b88efe559fac",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove logid field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove logid field\"\nwhen\n  has_field(\n    field : \"logid\"\n  )\nthen\n  remove_field(\n    field : \"logid\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "e16fbf0c-f9e1-4438-b593-4548eacc2e7e",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "qtypeval to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"qtypeval to long\"\nwhen\n  has_field(\"qtypeval\")\nthen\n  set_field(\"qtypeval\", to_long($message.qtypeval));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "e46684ab-36f3-4bb0-bd1e-9e41aefa8cf7",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "wanin to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"wanin to long\"\nwhen\n  has_field(\"wanin\")\nthen\n  set_field(\"winin\", to_long($message.wanin));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "4f418c22-0715-45b0-aa57-416b4f849382",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "facility_num to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"facility_num to long\"\nwhen\n  has_field(\"facility_num\")\nthen\n  set_field(\"facility_num\", to_long($message.facility_num));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "c9a1c6be-4846-4d80-9e35-577d83250ada",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "rcvdpkt to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"rcvdpkt to long\"\nwhen\n  has_field(\"rcvdpkt\")\nthen\n  set_field(\"rcvdpkt\", to_long($message.rcvdpkt));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "5bbcc00c-6128-4c6f-b088-af3e2fb9a12f",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "logid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"logid to long\"\nwhen\n  has_field(\"logid\")\nthen\n  set_field(\"logid\", to_long($message.logid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "675d5955-0385-445b-83ed-d32396302fcc",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove unused start action fields"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove unused start action fields\"\nwhen\n  ( has_field(\"action\") &&\nto_string($message.\"action\") == \"start\"\n)\n\nthen\n  remove_field(\n    field : \"duration\",\n    invert : false\n  );\n  remove_field(\n    field : \"rcvdbyte\",\n    invert : false\n  );\n  remove_field(\n    field : \"rcvdpkt\",\n    invert : false\n  );\n  remove_field(\n    field : \"sentbyte\",\n    invert : false\n  );\n  remove_field(\n    field : \"sentpkt\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "57633fac-0d90-4ee0-b31a-8bf673126c42",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "policyid to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"policyid to long\"\nwhen\n  has_field(\"policyid\")\nthen\n  set_field(\"policyid\", to_long($message.policyid));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "59400c97-dad7-414e-b744-b6d08111b481",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove facility field"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove facility field\"\nwhen\n  has_field(\n    field : \"facility\"\n  )\nthen\n  remove_field(\n    field : \"facility\",\n    invert : false\n  );\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "348f590a-0c14-4a47-b43a-13d17f6b99ab",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "duration to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"duration to long\"\nwhen\n  has_field(\"duration\")\nthen\n  set_field(\"duration\", to_long($message.duration));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "097b00ec-27cf-48f0-8d20-453b34c7cfde",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "durationdelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"durationdelta to long\"\nwhen\n  has_field(\"durationdelta\")\nthen\n  set_field(\"durationdelta\", to_long($message.durationdelta));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "27931f23-300d-4c30-bd9c-ebe4cb638690",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "sentdelta to long"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"sentdelta to long\"\nwhen\n  has_field(\"sentdelta\")\nthen\n  set_field(\"sentdelta\", to_long($message.sentdelta));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream_title",
+        "version": "1"
+      },
+      "id": "7e58ee66-d3e5-4704-a06e-8a991e09d0a3",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "FortiGate Syslog"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.2.5+7eaa89d"
         }
       ]
     }

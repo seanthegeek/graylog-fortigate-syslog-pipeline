@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5-rev7
+
+- Fix install by including `stream_title` object
+
 ## 1.0.4-rev6
 
 - Fix `"rcvdpktdelta to long` pipeline rule
