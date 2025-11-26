@@ -1,7 +1,7 @@
 {
   "v": "1",
   "id": "c3c6366b-0e10-41d7-91de-d54d8b9694b0",
-  "rev": 7,
+  "rev": 8,
   "name": "FortiGate Syslog pipeline",
   "summary": "Converts FortiGate Syslog fields to the correct data type and removes unnecessary fields",
   "description": "# graylog-fortigate-syslog-pipeline\n\n## FortiGate syslog data cleanup\n\nConverts FortiGate syslog fields to the correct data type and removes unnecessary fields.\n\n### Dependencies\n\n- [FortiGate syslog content pack](https://github.com/seanthegeek/graylog-fortigate-syslog) provides the required `Graylog Syslog` stream",
@@ -2610,26 +2610,6 @@
         "source": {
           "@type": "string",
           "@value": "rule \"sentdelta to long\"\nwhen\n  has_field(\"sentdelta\")\nthen\n  set_field(\"sentdelta\", to_long($message.sentdelta));\nend"
-        }
-      },
-      "constraints": [
-        {
-          "type": "server-version",
-          "version": ">=5.2.5+7eaa89d"
-        }
-      ]
-    },
-    {
-      "v": "1",
-      "type": {
-        "name": "stream_title",
-        "version": "1"
-      },
-      "id": "7e58ee66-d3e5-4704-a06e-8a991e09d0a3",
-      "data": {
-        "title": {
-          "@type": "string",
-          "@value": "FortiGate Syslog"
         }
       },
       "constraints": [

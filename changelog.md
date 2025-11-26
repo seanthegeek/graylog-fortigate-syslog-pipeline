@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5-rev8
+
+- Graylog 7.0 support
+
 ## 1.0.5-rev7
 
 - Fix install by including `stream_title` object
